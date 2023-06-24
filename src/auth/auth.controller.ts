@@ -14,6 +14,7 @@ export class AuthController {
 
 
   @Get('/redirect')
+  @UseGuards(GoogleAuthGuard)
   redirect(){
     return "Redirect Page after logged in"
   }
