@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { PassportModule } from '@nestjs/passport';
 
 
 @Module({
@@ -27,6 +28,7 @@ import { User } from './user/entities/user.entity';
       inject: [ConfigService],
     }),
     UserModule,
+    PassportModule.register({session:true})
     ],
   controllers: [AppController],
   providers: [AppService],
