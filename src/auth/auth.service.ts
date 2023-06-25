@@ -33,4 +33,17 @@ constructor(@InjectRepository(User) private readonly userRepository:Repository<U
     }
 
 
+
+    async findUser(id: string){
+        try {
+            const user = await this.userRepository.findOneBy({id});
+            
+            return user;
+            
+        } catch (error) {
+            
+        }
+    }
+
+
 }
